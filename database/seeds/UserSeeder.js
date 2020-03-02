@@ -2,7 +2,7 @@
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 
-const Factory = use('Factory')cd 
+const Factory = use('Factory')
 
 class UserSeeder {
   static async run() {
