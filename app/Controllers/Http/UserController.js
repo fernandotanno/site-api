@@ -37,9 +37,33 @@ class UserController {
             message: `Usuário ${user.username} cadastrado com sucesso!`,
             data: user
         })
+    }
 
+    async update({ params, request, response }) {
 
+        const user = await User.find(params.id)
 
+        const { ...data } = request.all()
+
+        user.merge(data)
+
+        user.save()
+
+        return response.status(200).json({
+            message: `Usuário ${user.username} alterado com sucesso`,
+            data: user
+        })
+    }
+
+    async destroy({ params, response }) {
+
+        const user = await User.find(params.id)
+
+        await user.delete()
+
+        return response.status(200).json({
+            message: `Usuário excluido com sucesso`
+        })
     }
 }
 
