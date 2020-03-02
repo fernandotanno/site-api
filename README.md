@@ -1,28 +1,30 @@
-# Adonis API application
+# Model Api Site/Blog
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
+## Commands
 
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
+### Folder Permissions
 
-## Setup
+If you have problems with folder permissions run the following command
 
-Use the adonis command to install the blueprint
-
-```bash
-adonis new yardstick --api-only
 ```
-
-or manually clone the repo and then run `npm install`.
-
+ sudo chown -R your-user:your-user folder-project
+```
 
 ### Migrations
 
-Run the following command to run startup migrations.
+```
+docker container exec -it site-api adonis migration:run
+```
 
-```js
-adonis migration:run
+Created 'RunDatabaseSeeder.js' file to order executions of seed files.
+Note: Add 'static' to seed files for orderly execution.
+
+```
+docker container exec -it site-api adonis seed --files='RunDatabaseSeeder.js'
+```
+
+### Seeds
+
+```
+docker container exec -it site-api adonis make:seed User
 ```
