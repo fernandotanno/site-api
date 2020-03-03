@@ -13,8 +13,8 @@ class UserSchema extends Schema {
       table.string('password', 60).notNullable()
       table.string('about_me')
       table.string('avatar')
-      table.enu('type', ['admin', 'author', 'reader']).notNullable().defaultTo('reader')
-      table.boolean('status').defaultTo(true)
+      table.enu('access_level', ['admin', 'author', 'reader']).notNullable().defaultTo('reader')
+      table.boolean('blocked').defaultTo(true)
       table.timestamps()
     })
   }
