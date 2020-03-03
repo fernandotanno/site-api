@@ -7,6 +7,7 @@ class PostSchema extends Schema {
   up() {
     this.create('posts', (table) => {
       table.increments()
+      table.string('url').notNullable()
       table.string('title').notNullable()
       table.string('subtitle')
       table.string('content').notNullable()
