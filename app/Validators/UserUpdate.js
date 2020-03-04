@@ -5,7 +5,7 @@ class UserUpdate {
   get rules() {
     return {
       username: 'required|min:4|max:60',
-      email: 'required|email|max:60|unique:users',
+      email: 'required|email|max:60',
       password: 'required'
     }
   }
@@ -18,7 +18,6 @@ class UserUpdate {
       'email.required': 'E-mail: obrigatório.',
       'email.email': 'E-mail: inválido.',
       'email.max': 'E-mail: quantidade maxima de caracteres 60.',
-      'email.unique': 'E-mail já consta na base de dados.',
       'password.required': 'Senha: campo é obrigatório.'
     }
   }
