@@ -9,4 +9,8 @@ const Route = use('Route')
 //})
 
 Route.resource('users', 'UserController')
-.apiOnly()
+    .apiOnly()
+    .validator(new Map([
+        [['users.store'], ['UserStore']],
+        [['users.update'], ['UserUpdate']],
+    ]))
